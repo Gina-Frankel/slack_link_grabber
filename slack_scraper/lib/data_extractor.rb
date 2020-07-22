@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 def extract_links_from_string(string)
-  regex = %r{(?<=data-stringify-link=")https:\/\/(?!air)\S*}
+  regex = %r{(?<=data-stringify-link=")https:\/\/(?!air)\S[^"]*}
   match = string.scan(regex)
   match
 end
